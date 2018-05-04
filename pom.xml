@@ -58,16 +58,44 @@
             </plugin>
         </plugins>
     </build>
+    
+    <distributionManagement>
+		<repository>
+			<id>artifactory</id>
+			<name>example-repo-local/</name>
+			<url>http://172.30.144.52:8081/artifactory/example-repo-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>artifactory-snapshots</id>
+			<name>example-repo-local/</name>
+			<url>http://172.30.144.52:8081/artifactory/example-repo-local/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
-    <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/libs-snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/snapshot</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
